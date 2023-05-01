@@ -1,0 +1,12 @@
+bundle init
+sudo gem install cocoapods
+Añadir al gem file si no se ha añadido : gem 'cocoapods'
+bundle install
+Create project: npx react-native init twosocial
+
+Run the ios simular: npx react-native run-ios
+
+Si watchman falla hacer estos dos comandos: 1. watchman watch-del-all 2. watchman shutdown-server
+
+
+Para linkar los fonts usar: npx react-native-asset and then, npx pod-install
