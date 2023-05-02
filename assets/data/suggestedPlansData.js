@@ -1,31 +1,23 @@
 const suggestedPlansData = [
     {
-        id: 1,
-        image: require('../images/user.jpeg'),
         title: 'GYM EVENT',
-        location: "XSPORT FITNESS",
-        description: "This is going to be the best sport event in the world."
+        image: 'https://notjustdev-dummy.s3.us-east-2.amazonaws.com/avatars/elon.png',
+        description: "This is going to be the best sport event in the world.",
     },
     {
-        id: 2,
-        image: require('../images/image.jpeg'),
         title: 'Hawaii-an party',
-        location: "Odysei bar",
-        selected: false,
+        image: require('../images/image.jpeg'),
+        description: "This is going to be the best sport event in the world.",
     },
     {
-        id: 3,
-        image: require('../images/image.jpeg'),
         title: 'Hawaii-an party',
-        location: "Odysei bar",
-        selected: false,
+        image: require('../images/image.jpeg'),
+        description: "This is going to be the best sport event in the world.",
     },
     {
-        id: 4,
-        image: require('../images/image.jpeg'),
         title: 'Hawaii-an party',
-        location: "Odysei bar",
-        selected: false,
+        image: require('../images/image.jpeg'),
+        description: "This is going to be the best sport event in the world.",
     }
 ];
 
