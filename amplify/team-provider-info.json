@@ -1,0 +1,20 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-twosocial-staging-40528-authRole",
+      "UnauthRoleArn": "arn:aws:iam::595613700226:role/amplify-twosocial-staging-40528-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::595613700226:role/amplify-twosocial-staging-40528-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-twosocial-staging-40528-deployment",
+      "UnauthRoleName": "amplify-twosocial-staging-40528-unauthRole",
+      "StackName": "amplify-twosocial-staging-40528",
+      "StackId": "arn:aws:cloudformation:us-east-2:595613700226:stack/amplify-twosocial-staging-40528/e66c80c0-eee7-11ed-9cdb-02f756cf43bb",
+      "AmplifyAppId": "daknlf43ngp7m"
+    },
+    "categories": {
+      "auth": {
+        "twosocial": {}
+      }
+    }
+  }
+}
