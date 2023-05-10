@@ -4,12 +4,12 @@ import dayjs from 'dayjs';
 import relativeTime from 'dayjs/plugin/relativeTime';
 dayjs.extend(relativeTime); //This is to have the date like 2 days ago, 1 week ago...
 
-const ContactListItem = ( { user }) => {
+const ContactListItem = ({ user }) => {
 const navigation = useNavigation();
 
     return (
         <Pressable onPress={() => {}} style={styles.container}>
-            <Image source={{uri: user.image}} style={styles.image}/>
+            <Image source={{ uri: user.image }} style={styles.image}/>
             <View style={styles.content}>
                 <Text numberOfLines={1} style={styles.name}>{user.name}</Text>
                 <Text numberOfLines={2} style={styles.subTitle}>{user.status}</Text>
@@ -35,11 +35,17 @@ const styles = StyleSheet.create ({
         borderRadius: 30,
         marginRight: 10,
     },
+    
+    content: {
+        flex: 1,
+    },
+
     name: {
         fontWeight: 'bold',
     },
     subTitle: {
         color: 'gray',
+        
     },
 });
 
