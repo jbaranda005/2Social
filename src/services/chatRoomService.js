@@ -12,7 +12,7 @@ export const getCommonChatRoomWithUser = async(userID) => {
     console.log(chatRooms[0].chatRoom.users.items[0]);
 
     const chatRoom = chatRooms.find((chatRoomItem) => {
-        return chatRoomItem.chatRoom.users.items.some((userItem) => userItem.user.id == userID
+        return chatRoomItem.chatRoom.users.items.some((userItem) => userItem.user.id === userID
         );
     });
     return chatRoom;
