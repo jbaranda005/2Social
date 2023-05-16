@@ -2,8 +2,8 @@ import React, { useEffect, useState } from 'react';
 import { View, StyleSheet, useWindowDimensions} from 'react-native';
 import Animated, { useSharedValue, useAnimatedStyle, useAnimatedGestureHandler, useDerivedValue, interpolate, withSpring, runOnJS } from 'react-native-reanimated';
 import { PanGestureHandler } from 'react-native-gesture-handler';
-import Like from '../../../assets/images/LIKE.png';
-import Nope from '../../../assets/images/nope.png';
+import Like from '../../assets/images/LIKE.png';
+import Nope from '../../assets/images/nope.png';
 
 const ROTATION = 60;
 const SWIPE_VELOCITY = 800;

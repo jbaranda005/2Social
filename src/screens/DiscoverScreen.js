@@ -10,7 +10,7 @@ import FontAwesome from 'react-native-vector-icons/FontAwesome';
 const ROTATION = 60;
 const SWIPE_VELOCITY = 800;
 
-const HomeScreen = () => {
+const DiscoverScreen = () => {
 
     const onSwipeLeft = (activity) => {
         console.warn("swipe left: ", activity.title);
@@ -84,4 +84,4 @@ const styles = StyleSheet.create({
 });
 
 
-export default HomeScreen;
+export default DiscoverScreen;
