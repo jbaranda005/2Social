@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from "react";
-import { FlatList, View, TextInput, StyleSheet, Button } from "react-native";
+import { FlatList, View, StyleSheet, Button } from "react-native";
 import ContactListItem from "../components/ContactListItem";
-import { API, graphqlOperation, Auth } from "aws-amplify";
+import { API, graphqlOperation } from "aws-amplify";
 import { listUsers } from "../graphql/queries";
 import {createUserChatRoom} from '../graphql/mutations';
 import { useNavigation, useRoute } from "@react-navigation/native";

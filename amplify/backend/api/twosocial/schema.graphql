@@ -1,3 +1,17 @@
+type Match @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  users: [User] @manyToMany(relationName: "UserMatch")
+}
+
+type Activity @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String!
+  image: String
+  description: String!
+  date: AWSDateTime!
+  location: String!
+}
+
 type ChatRoom @model @auth(rules: [{allow: public}]) {
   id: ID!
   name: String
@@ -11,11 +25,7 @@ type Message @model @auth(rules: [{allow: public}]) {
   id: ID!
   createdAt: AWSDateTime!
   text: String!
-  chatroomID: ID! @index(
-    name: "byChatRoom",
-    sortKeyFields: ["createdAt"]
-    queryField: "listMessagesByChatRoom"
-  )
+  chatroomID: ID! @index(name: "byChatRoom", sortKeyFields: ["createdAt"], queryField: "listMessagesByChatRoom")
   userID: ID! @index(name: "byUser")
 }
 
@@ -26,4 +36,6 @@ type User @model @auth(rules: [{allow: public}]) {
   image: String
   Messages: [Message] @hasMany(indexName: "byUser", fields: ["id"])
   ChatRooms: [ChatRoom] @manyToMany(relationName: "UserChatRoom")
+  Matches: [Match] @manyToMany(relationName: "UserMatch")
 }
+ 

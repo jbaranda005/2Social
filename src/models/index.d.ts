@@ -6,6 +6,70 @@ import { LazyLoading, LazyLoadingDisabled, AsyncCollection, AsyncItem } from "@a
 
 
 
+type EagerMatch = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Match, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly users?: (UserMatch | null)[] | null;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyMatch = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Match, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly users: AsyncCollection<UserMatch>;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type Match = LazyLoading extends LazyLoadingDisabled ? EagerMatch : LazyMatch
+
+export declare const Match: (new (init: ModelInit<Match>) => Match) & {
+  copyOf(source: Match, mutator: (draft: MutableModel<Match>) => MutableModel<Match> | void): Match;
+}
+
+type EagerActivity = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Activity, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly title: string;
+  readonly image?: string | null;
+  readonly description: string;
+  readonly date: string;
+  readonly location: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyActivity = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<Activity, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly title: string;
+  readonly image?: string | null;
+  readonly description: string;
+  readonly date: string;
+  readonly location: string;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type Activity = LazyLoading extends LazyLoadingDisabled ? EagerActivity : LazyActivity
+
+export declare const Activity: (new (init: ModelInit<Activity>) => Activity) & {
+  copyOf(source: Activity, mutator: (draft: MutableModel<Activity>) => MutableModel<Activity> | void): Activity;
+}
+
 type EagerChatRoom = {
   readonly [__modelMeta__]: {
     identifier: ManagedIdentifier<ChatRoom, 'id'>;
@@ -87,6 +151,7 @@ type EagerUser = {
   readonly image?: string | null;
   readonly Messages?: (Message | null)[] | null;
   readonly ChatRooms?: (UserChatRoom | null)[] | null;
+  readonly Matches?: (UserMatch | null)[] | null;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -102,6 +167,7 @@ type LazyUser = {
   readonly image?: string | null;
   readonly Messages: AsyncCollection<Message>;
   readonly ChatRooms: AsyncCollection<UserChatRoom>;
+  readonly Matches: AsyncCollection<UserMatch>;
   readonly createdAt?: string | null;
   readonly updatedAt?: string | null;
 }
@@ -110,6 +176,40 @@ export declare type User = LazyLoading extends LazyLoadingDisabled ? EagerUser :
 
 export declare const User: (new (init: ModelInit<User>) => User) & {
   copyOf(source: User, mutator: (draft: MutableModel<User>) => MutableModel<User> | void): User;
+}
+
+type EagerUserMatch = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<UserMatch, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly matchId?: string | null;
+  readonly userId?: string | null;
+  readonly match: Match;
+  readonly user: User;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+type LazyUserMatch = {
+  readonly [__modelMeta__]: {
+    identifier: ManagedIdentifier<UserMatch, 'id'>;
+    readOnlyFields: 'createdAt' | 'updatedAt';
+  };
+  readonly id: string;
+  readonly matchId?: string | null;
+  readonly userId?: string | null;
+  readonly match: AsyncItem<Match>;
+  readonly user: AsyncItem<User>;
+  readonly createdAt?: string | null;
+  readonly updatedAt?: string | null;
+}
+
+export declare type UserMatch = LazyLoading extends LazyLoadingDisabled ? EagerUserMatch : LazyUserMatch
+
+export declare const UserMatch: (new (init: ModelInit<UserMatch>) => UserMatch) & {
+  copyOf(source: UserMatch, mutator: (draft: MutableModel<UserMatch>) => MutableModel<UserMatch> | void): UserMatch;
 }
 
 type EagerUserChatRoom = {
